@@ -1,6 +1,7 @@
 FROM ubuntu:22.04
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && \
     apt-get install -y ffmpeg software-properties-common && \ 
     add-apt-repository ppa:deadsnakes/ppa -y && \
     apt-get update -y && \
